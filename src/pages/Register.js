@@ -12,7 +12,7 @@ const Register = () => {
   )
 // handle form input change
 const handleChange = (event) => {
-  let newState = object.assign({}, userData);
+  let newState = Object.assign({}, userData);
     newState[event.target.name] = event.target.value;
     setUserData(newState);
 }
@@ -44,7 +44,7 @@ const handleSubmit = (event) => {
       Register Page
       <form onSubmit={handleSubmit}>
         <div>
-          <label for="">Name</label>
+          <label htmlFor="name">Name</label>
           <input 
           onChange={handleChange}
           type="text" 
@@ -55,7 +55,7 @@ const handleSubmit = (event) => {
         </div>
 
         <div>
-          <label for="">Email</label>
+          <label htmlFor="email">Email</label>
           <input 
           onChange={handleChange}
           type="text" 
@@ -66,7 +66,7 @@ const handleSubmit = (event) => {
         </div>
 
         <div>
-          <label for="">Password</label>
+          <label htmlFor="password">Password</label>
           <input 
           onChange={handleChange}
           type="password" 
@@ -76,7 +76,7 @@ const handleSubmit = (event) => {
           />
         </div>
         <div>
-          <label for="">Confirm Password</label>
+          <label htmlFor="password2">Confirm Password</label>
           <input 
           onChange={handleChange}
           type="password" 
