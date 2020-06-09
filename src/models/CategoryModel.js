@@ -15,7 +15,19 @@ export default class CategoryModel {
     .then(res => res.json())
   }
 
-  
+  // GET Show category
+  static show = () => {
+    return fetch(`${url}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include'
+    })
+    .then(res => res.json())
+  }
+
+
 }
 
 
