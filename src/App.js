@@ -29,8 +29,6 @@ function App(props) {
      currentUser={ currentUser } 
      logout={ logout }
      />
-
-      hello
       <Routes
       currentUser={ currentUser }
       storeUser={ storeUser }
