@@ -16,8 +16,8 @@ export default class CategoryModel {
   }
 
   // GET Show category
-  static show = () => {
-    return fetch(`${url}`, {
+  static show = (categoryId) => {
+    return fetch(`${url}${categoryId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
