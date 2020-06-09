@@ -1,95 +1,93 @@
-import React, {useState, useEffect} from 'react';
+import React, { Component } from 'react';
 import UserModel from '../models/UserModel';
 
-const Register = () => {
-  const [userData, setUserData] = useState(
-    {
+class Register extends Component {
+  state = {
     name: '',
     email: '',
     password: '',
     password2: '',
     }
-  )
+  
 // handle form input change
-const handleChange = (event) => {
-  let newState = Object.assign({}, userData);
-    newState[event.target.name] = event.target.value;
-    setUserData(newState);
-}
+ handleChange = (event) => {
+  this.setState({
+    [ event.target.name ]: event.target.value
+  })
+ }
 
 // handle form submission
-const handleSubmit = (event) => {
+handleSubmit = (event) => {
   event.preventDefault();
   // 
-  UserModel.register(userData)
+  UserModel.create(this.state)
   .then(data => {
     console.log('Registered', data);
     // reset the form inputs
-    setUserData(
-      {
+    this.setState({
       name: '',
       email: '',
       password: '',
       password2: '',
-
-      }
-    )
+    })
+    this.props.history.push('/login')
   })
 }
 
   // need a form where user can input name email and password
-
+render() {
   return (
     <div>
       Register Page
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="text" 
           id="name"
           name="name" 
-          value={userData.name}
+          value={this.state.name}
           />
         </div>
 
         <div>
           <label htmlFor="email">Email</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="text" 
           id="email"
           name="email" 
-          value={userData.email}
+          value={this.state.email}
           />
         </div>
 
         <div>
           <label htmlFor="password">Password</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="password" 
           id="password"
           name="password" 
-          value={userData.password}
+          value={this.state.password}
           />
         </div>
         <div>
           <label htmlFor="password2">Confirm Password</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="password" 
           id="password2"
           name="password2" 
-          value={userData.password2}
+          value={this.state.password2}
           />
         </div>
-        <button type="submit">Sign in</button>
+        <button type="submit">Register</button>
 
         </form>
     </div>
   )
+}
 }
 
 export default Register;

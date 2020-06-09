@@ -1,69 +1,66 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import UserModel from '../models/UserModel'
 
-const Login = (props) =>  {
-  const[userData, setUserData] = useState({
+class Login extends Component {
+  state = {
     email: '',
     password: '',
-  })
+  }
 
-  // handle form input change
-const handleChange = (event) => {
-  let newState = Object.assign({}, userData);
-    newState[event.target.name] = event.target.value;
-    setUserData(newState);
-}
-  
+// handle form input change
+handleChange = (event) => {
+  this.setState({
+    [ event.target.name ]: event.target.value
+  })
+ }
+
 // handle form submission
-const handleSubmit = (event) => {
+handleSubmit = (event) => {
   event.preventDefault();
-  // 
-  UserModel.login(userData)
-  .then(data => {
-    console.log(data);
-    // if(data.status === 200){
-    //   props.StoreUser(data.data)
-    // }
-    // reset the form inputs
-    setUserData(
-      {
-      email: '',
-      password: '',
-
-      }
-    )
-  })
-}
-
+  
+  UserModel.login(this.state)
+   .then(data => {
+    console.log('logedin', data)
+    // fix it
+    if(!data.data) {
+      return false
+    }
+     this.props.storeUser(data.data)
+     this.props.history.push('/profile')
+    })
+    .catch(err => console.log(err))
+  }
+ render(){
   return (
     <div>
       Login Page
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
       <div>
           <label htmlFor="email">Email</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="text" 
           id="email"
           name="email" 
-          value={userData.email}
+          value={this.state.email}
           />
         </div>
 
         <div>
           <label htmlFor="password">Password</label>
           <input 
-          onChange={handleChange}
+          onChange={this.handleChange}
           type="password" 
           id="password"
           name="password" 
-          value={userData.password}
+          value={this.state.password}
           />
         </div>
-        <button type="submit">Login in</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   )
+ }
 }
 
 

@@ -1,11 +1,12 @@
 import React from 'react';
-import Register from '../pages/Register';
 import { Switch, Route } from 'react-router-dom';
+import Register from '../pages/Register';
 import Login from '../pages/Login';
+import Profile from '../pages/Profile';
 
-const Routes = (props) => (
+export default (props) => (
   <Switch>
-    <Route exact path='/register' component={ Register } />
+    <Route path='/register' component={ Register } />
     <Route path="/login" render={ (routeComponentProps) => {
       return <Login 
                { ...routeComponentProps }
@@ -13,8 +14,7 @@ const Routes = (props) => (
                storeUser={ props.storeUser }
              />
     }} />
-
-  </Switch>
+    <Route  path='/profile' component={ Profile } />
+</Switch>
 )
 
-export default Routes;
