@@ -10,7 +10,7 @@ const Navbar = (props) => {
             { props.currentUser ? 
             <>
               <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
-              <li><Link to={'/profile'}>Profile</Link></li>
+              <li><Link to={'/categories'}>CategoriesList</Link></li>
               </>
               :
               <>
