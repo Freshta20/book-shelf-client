@@ -2,7 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
-import Profile from '../pages/Profile';
+import CategoryList from '../pages/CategoryList';
+import CategoryShow from '../pages/CategoryShow';
 
 export default (props) => (
   <Switch>
@@ -14,7 +15,10 @@ export default (props) => (
                storeUser={ props.storeUser }
              />
     }} />
-    <Route  path='/profile' component={ Profile } />
+        <Route  path='/categories/:id' component={ CategoryShow } />
+
+    <Route  path='/categories' component={ CategoryList } />
+
 </Switch>
 )
 

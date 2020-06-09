@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CategoryModel from '../models/CategoryModel';
 import { Link } from 'react-router-dom';
-import CategoryCard from '../components/categoryCard';
+import CategoryCard from '../components/CategoryCard';
 
-class Profile extends Component {
+class CategoryList extends Component {
   state = {
     categories : []
   }
@@ -14,13 +14,19 @@ class Profile extends Component {
 
   fetchData = () => {
     CategoryModel.all()
-    .then(data => this.setState({ categories: data.categories }))
+    .then(data =>{
+      console.log(data)
+      this.setState({ categories: data.categories })})
     .catch(err => console.log(err))
   }
 
   render(){
     let categoryList = this.state.categories.map((category, index) => {
-    return <CategoryCard key={index} { ...category}/>
+    return( 
+      <Link key={index} to={`/categories/${ category._id }`}>
+          <CategoryCard { ...category}/>
+      </Link>
+    )
     })
     return(
       <div>
@@ -30,7 +36,7 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default CategoryList;
 
 // const  Profile = () =>  {
   //   const [categories, setCategories] = useState([]);
