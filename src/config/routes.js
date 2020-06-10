@@ -5,6 +5,7 @@ import Login from '../pages/Login';
 import CategoryList from '../pages/CategoryList';
 import CategoryShow from '../pages/CategoryShow';
 import NewCategory from '../pages/NewCategory';
+import CategoryEdit from '../pages/CategoryEdit';
 
 export default (props) => (
   <Switch>
@@ -17,9 +18,9 @@ export default (props) => (
              />
     }} />
     <Route  path='/categories/new' component={ NewCategory } />
+    <Route  path='/categories/edit/:id' component={ CategoryEdit } />
 
     <Route  path='/categories/:id' component={ CategoryShow } />
-
     <Route  path='/categories' component={ CategoryList } />
 
 </Switch>
