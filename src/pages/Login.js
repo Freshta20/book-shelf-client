@@ -32,12 +32,16 @@ handleSubmit = (event) => {
   }
  render(){
   return (
-    <div>
-      Login Page
+    <div className="container">
+      <br/>
+      <div className="card">
+      <div className="card-body">
+      <h3 className="text-center"> Login</h3>
       <form onSubmit={this.handleSubmit}>
-      <div>
+      <div className="form-group">
           <label htmlFor="email">Email</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="text" 
           id="email"
@@ -46,9 +50,10 @@ handleSubmit = (event) => {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="password" 
           id="password"
@@ -56,8 +61,10 @@ handleSubmit = (event) => {
           value={this.state.password}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="btn btn-primary">Login</button>
       </form>
+      </div>
+      </div>
     </div>
   )
  }
