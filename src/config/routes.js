@@ -4,6 +4,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import CategoryList from '../pages/CategoryList';
 import CategoryShow from '../pages/CategoryShow';
+import NewCategory from '../pages/NewCategory';
 
 export default (props) => (
   <Switch>
@@ -15,7 +16,9 @@ export default (props) => (
                storeUser={ props.storeUser }
              />
     }} />
-        <Route  path='/categories/:id' component={ CategoryShow } />
+    <Route  path='/categories/new' component={ NewCategory } />
+
+    <Route  path='/categories/:id' component={ CategoryShow } />
 
     <Route  path='/categories' component={ CategoryList } />
 

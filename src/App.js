@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css"
 import Routes from './config/routes';
 import Navbar from './components/Navbar';
 import UserModel from './models/UserModel';
