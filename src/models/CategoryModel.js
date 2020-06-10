@@ -17,7 +17,7 @@ export default class CategoryModel {
 
   // GET Show category
   static show = (categoryId) => {
-    return fetch(`${url}${categoryId}`, {
+    return fetch(`${url}/${categoryId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -27,6 +27,30 @@ export default class CategoryModel {
     .then(res => res.json())
   }
 
+  // POST new category
+  static create = (categoryData) => {
+    return fetch(`${url}/new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
+      body: JSON.stringify(categoryData)
+    })
+    .then(res => res.json())
+  }
+
+  // DELETE a category
+  static delete = (categoryId) => {
+		return fetch(`${url}/${categoryId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include'
+		})
+		.then(res => res.json())
+	}
 
 }
 
