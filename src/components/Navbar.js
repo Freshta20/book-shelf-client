@@ -11,6 +11,8 @@ const Navbar = (props) => {
             <>
               <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
               <li><Link to={'/categories'}>CategoriesList</Link></li>
+              <li><Link to={'/categories/new'}>New Category</Link></li>
+
               </>
               :
               <>
