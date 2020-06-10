@@ -40,6 +40,19 @@ export default class CategoryModel {
     .then(res => res.json())
   }
 
+  // PUT a category
+  static update = (categoryId, categoryData) => {
+    return fetch(`${url}/${categoryId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
+      body: JSON.stringify(categoryData)
+    })
+    .then(res => res.json())
+  }
+
   // DELETE a category
   static delete = (categoryId) => {
 		return fetch(`${url}/${categoryId}`, {
