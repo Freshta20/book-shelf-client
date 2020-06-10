@@ -25,6 +25,7 @@ class CategoryList extends Component {
   }catch(err){
     console.log(err)
   }
+  this.fetchData();
 }
 
   render(){
@@ -32,7 +33,7 @@ class CategoryList extends Component {
     return( 
       <>
       <Link key={index} to={`/categories/${ category._id }`}>
-          <CategoryCard { ...category}/>
+          <CategoryCard key={index} { ...category}/>
       </Link>
               <button  onClick={()=>this.handleDelete(category._id)}>Delete</button>
               </>
@@ -49,25 +50,3 @@ class CategoryList extends Component {
 
 export default CategoryList;
 
-// const  Profile = () =>  {
-  //   const [categories, setCategories] = useState([]);
-  
-  //   useEffect(() => {
-  //     CategoryModel.index()
-  //     .then(res => {
-  //       console.log(res.data.categories)
-  //     })
-  //     .catch(err => console.log(err))
-  //   }, [categories]);
-   
-  //   const categoryGenre = categories.map((element, index) 
-  //   => (
-  //     <h2 key={index}>{element.genre}</h2>
-  //   ))
-  //   return (
-  //     <div> 
-  //     {/* {categoryGenre} */}
-  //       Profile
-  //     </div>
-  //   )
-  //   }
