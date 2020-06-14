@@ -6,6 +6,10 @@ import CategoryList from '../pages/CategoryList';
 import CategoryShow from '../pages/CategoryShow';
 import NewCategory from '../pages/NewCategory';
 import CategoryEdit from '../pages/CategoryEdit';
+import NewBook from '../pages/NewBook';
+import EditBook from '../pages/EditBook';
+// import CategoryCardShow from '../components/CategoryCardShow';
+
 
 export default (props) => (
   <Switch>
@@ -19,10 +23,11 @@ export default (props) => (
     }} />
     <Route  path='/categories/new' component={ NewCategory } />
     <Route  path='/categories/edit/:id' component={ CategoryEdit } />
+    <Route  path='/categories/:id/book/new' component={ NewBook } />
 
+    <Route  path='/categories/:id/book/:bid' component={ EditBook } />
     <Route  path='/categories/:id' component={ CategoryShow } />
     <Route  path='/categories' component={ CategoryList } />
 
 </Switch>
 )
-
