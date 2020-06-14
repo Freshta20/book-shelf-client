@@ -22,21 +22,30 @@ class CategoryList extends Component {
   }
   handleDelete = async (id) => {
     try{ CategoryModel.delete(id)
+      this.props.history.push('/categories');
   }catch(err){
     console.log(err)
   }
   this.fetchData();
 }
+// componentDidUpdate(prevProps, prevState) {
+// if (prevState.categories !== this.state.categories){
+//   this.fetchData()
+// }
+// }
 
   render(){
     let categoryList = this.state.categories.map((category, index) => {
     return( 
-      <>
-      <Link key={index} to={`/categories/${ category._id }`}>
-          <CategoryCard key={index} { ...category}/>
-      </Link>
-              <button  onClick={()=>this.handleDelete(category._id)}>Delete</button>
-              </>
+     <>
+      {/* <Link key={index} to={`/categories/${ category._id }`}> */}
+        <CategoryCard key={index} { ...category} fetchData={this.fetchData}/>
+      {/* </Link> */}
+      {/* <button onClick={()=>this.handleDelete(category._id)}> Delete </button> */}
+      {/* <Link to={{ pathname:`/categories/edit/${category._id}`, state: { genre: category.genre }}}>
+      <button>Update</button>
+      </Link> */}
+     </>
 
     )
     })
