@@ -12,20 +12,19 @@ import NewBook from '../pages/NewBook';
 
 export default (props) => (
   <Switch>
-    <Route path='/register' component={ Register } />
-    <Route path="/login" render={ (routeComponentProps) => {
+      <Route path='/' component={ Home } />
+      <Route path='/register' component={ Register } />
+      <Route path="/login" render={ (routeComponentProps) => {
       return <Login 
                { ...routeComponentProps }
                currentUser={ props.currentUser }
                storeUser={ props.storeUser }
-             />
-    }} />
-    <Route  path='/categories/new' component={ NewCategory } />
-    <Route  path='/categories/edit/:id' component={ CategoryEdit } />
-    <Route  path='/categories/:id/book/new' component={ NewBook } />
-
-    <Route  path='/categories/:id' component={ CategoryShow } />
-    <Route  path='/categories' component={ CategoryList } />
-
-</Switch>
+               />
+               }} />
+      <Route  path='/categories/new' component={ NewCategory } />
+      <Route  path='/categories/edit/:id' component={ CategoryEdit } />
+      <Route  path='/categories/:id/book/new' component={ NewBook } />
+      <Route  path='/categories/:id' component={ CategoryShow } />
+      <Route  path='/categories' component={ CategoryList } />
+  </Switch>
 )
