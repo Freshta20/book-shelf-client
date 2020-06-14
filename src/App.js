@@ -30,17 +30,7 @@ function App(props) {
      currentUser={ currentUser } 
      logout={ logout }
      />
-     {/* <div className="container">
-     <br/>
-     <br/>
-     <br/>
-      <div className="card">
-       <div className="card-body text-center">
      
-     <h3></h3>
-     </div>
-     </div>
-     </div> */}
       <Routes
       currentUser={ currentUser }
       storeUser={ storeUser }
