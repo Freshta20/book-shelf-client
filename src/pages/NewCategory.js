@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CategoryModel from '../models/CategoryModel'
 
-class NewGame extends Component {
+class NewCategory extends Component {
   state = {
     genre: '' 
   }
@@ -23,22 +23,29 @@ class NewGame extends Component {
 
   render() {
     return (
-      <div>
-        <h2>New Category</h2>
+      <div className="container">
+      <br/>
+      <br/>
+      <div className="card">
+      <div className="card-body">
+      <h3 className="text-center"> New Category</h3>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="form-group">
             <label htmlFor="genre">Genre</label>
             <input 
+            className="form-control"
               type="text" 
               name="genre" 
               onChange={this.handleChange}
               value={this.state.genre} />
           </div>
-          <input type="submit" value="Save!"/>
+          <input type="submit" value="Save!" className="btn btn-primary"/>
         </form>
+        </div>
+        </div>
       </div>
     );
   }
 }
 
-export default NewGame;
+export default NewCategory;
