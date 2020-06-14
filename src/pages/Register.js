@@ -37,12 +37,17 @@ handleSubmit = (event) => {
   // need a form where user can input name email and password
 render() {
   return (
-    <div>
-      Register Page
+    <div className="container">
+      <br/>
+      <br/>
+      <div className="card">
+      <div className="card-body">
+      <h3 className="text-center"> Register</h3>
       <form onSubmit={this.handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="text" 
           id="name"
@@ -51,9 +56,10 @@ render() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="text" 
           id="email"
@@ -62,9 +68,10 @@ render() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="password" 
           id="password"
@@ -72,9 +79,10 @@ render() {
           value={this.state.password}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password2">Confirm Password</label>
           <input 
+          className="form-control"
           onChange={this.handleChange}
           type="password" 
           id="password2"
@@ -82,9 +90,11 @@ render() {
           value={this.state.password2}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="btn btn-primary">Register</button>
 
         </form>
+        </div>
+        </div>
     </div>
   )
 }
