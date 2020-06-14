@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserModel from '../models/UserModel'
-
+import CategoryList from './CategoryList'
 class Login extends Component {
   state = {
     email: '',
@@ -26,13 +26,14 @@ handleSubmit = (event) => {
       return false
     }
      this.props.storeUser(data.data)
-     this.props.history.push('/profile')
+     this.props.history.push('./categories')
     })
     .catch(err => console.log(err))
   }
  render(){
   return (
     <div className="container">
+      <br/>
       <br/>
       <div className="card">
       <div className="card-body">
@@ -61,7 +62,7 @@ handleSubmit = (event) => {
           value={this.state.password}
           />
         </div>
-        <button type="submit" className="btn btn-primary">Login</button>
+        <input type="submit" value="Login!" className="btn btn-primary"/>
       </form>
       </div>
       </div>
