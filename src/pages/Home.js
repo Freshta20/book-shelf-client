@@ -12,13 +12,17 @@ const Home = () => {
       <div className="card">
        <div className="card-body text-center">
         <h1>Book Shelf</h1>
-     <h3> This is the place that you can add categories of books.
-        Add your favorite books inside each category.  </h3>
-        <Link to={'/login'}>Login</Link>
-        <Link to={'/register'}>Register</Link>
+        <p> This is the place that you can add categories of books.
+        Add your favorite books inside each category.  </p>
+        <div>
+        <Link to={'/login'} className="card-link">Login</Link>
+        </div>
+        <div>
+        <Link to={'/register'} className="card-link">Register</Link>
+        </div>
 
-     </div>
-     </div>
+       </div>
+      </div>
      </div>
    
   );

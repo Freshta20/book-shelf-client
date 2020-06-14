@@ -7,12 +7,14 @@ import CategoryShow from '../pages/CategoryShow';
 import NewCategory from '../pages/NewCategory';
 import CategoryEdit from '../pages/CategoryEdit';
 import NewBook from '../pages/NewBook';
+import Home from '../pages/Home';
+
 // import CategoryCardShow from '../components/CategoryCardShow';
 
 
 export default (props) => (
   <Switch>
-      <Route path='/' component={ Home } />
+      <Route exact path='/' component={ Home } />
       <Route path='/register' component={ Register } />
       <Route path="/login" render={ (routeComponentProps) => {
       return <Login 

@@ -19,10 +19,13 @@ const CategoryCard = (props) => {
 
         <h3 className="text-center"> {props.genre}</h3>
         </Link>
+        <div className='text-center'>
         <button onClick={() => handleDelete(props._id)} className="btn btn-primary"> Delete </button>
         <Link to={{ pathname:`/categories/edit/${props._id}`, state: { genre: props.genre }}} >
       <button className="btn btn-primary">Update</button>
       </Link>
+        </div>
+        
        </div>
       </div>
     </div>
