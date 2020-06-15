@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CategoryModel from '../models/CategoryModel';
 import { Link } from 'react-router-dom';
-// import CategoryCard from '../components/CategoryCard';
+import CategoryCard from '../components/CategoryCard';
 
 class CategoryList extends Component {
   state = {
