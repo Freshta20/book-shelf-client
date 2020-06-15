@@ -1,7 +1,7 @@
 // comunicating with the Api
 // import axios from 'axios';
 
-const REACT_APP_API = 'http://localhost:4000/api/v1/auth';
+const REACT_APP_API = `${process.env.REACT_APP_API}/api/v1/auth` || ' http://localhost:4000/api/v1/auth';
 // make an instance of axios that enables passing of cookies
 // const cookieAxios = axios.create({
 //   withCredentials: true

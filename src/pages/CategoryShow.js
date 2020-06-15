@@ -48,7 +48,7 @@ class CategoryShow extends Component{
       <div className="row mb-5">
         <div className="col">
           <h1 className="head">Your Books</h1>
-          <Link to={`/categories/${this.state.categoryId}/book/new`}> create book </Link>
+          <Link to={`/categories/${this.state.categoryId}/book/new`} className="head"> create book </Link>
         </div>
       </div>
        {this.state.category ? bookList  : 'Loading'}
