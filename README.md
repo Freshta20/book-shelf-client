@@ -101,7 +101,7 @@ In this project, we fulfilled all core requirements. Our website has:
 ## Wireframes
 During our planning, we used figma to create wireframes for each page.
 1. Home Page   
-<img src="./readme/Home.png" height=350>
+<img src="./Home.png" height=350>
 2. Log In  
 <img src="./readme/Login.png" height=350>
 3. Register  

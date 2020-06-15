@@ -15,8 +15,8 @@ import Home from '../pages/Home';
 export default (props) => (
   <Switch>
       <Route exact path='/' component={ Home } />
-      <Route path='/register' component={ Register } />
-      <Route path="/login" render={ (routeComponentProps) => {
+      <Route exact path='/register' component={ Register } />
+      <Route exact path="/login" render={ (routeComponentProps) => {
       return <Login 
                { ...routeComponentProps }
                currentUser={ props.currentUser }
