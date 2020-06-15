@@ -1,5 +1,5 @@
 
-const book_url = 'http://localhost:4000/api/v1/books';
+const book_url = `${process.env.REACT_APP_API_URL}/api/v1/books` || 'http://localhost:4000/api/v1/books';
 
 export default class BookModel {
 

@@ -1,5 +1,5 @@
 
-const url = 'http://localhost:4000/api/v1/categories';
+const url = `${process.env.REACT_APP_API_URL}/api/v1/categories` ||'http://localhost:4000/api/v1/categories';
 
 export default class CategoryModel {
 // GET all categories
