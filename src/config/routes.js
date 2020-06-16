@@ -23,10 +23,10 @@ export default (props) => (
                storeUser={ props.storeUser }
                />
                }} />
-      <Route  path='/categories/new' component={ NewCategory } />
-      <Route  path='/categories/edit/:id' component={ CategoryEdit } />
-      <Route  path='/categories/:id/book/new' component={ NewBook } />
-      <Route  path='/categories/:id' component={ CategoryShow } />
-      <Route  path='/categories' component={ CategoryList } />
+      <Route exact  path='/categories/new' component={ NewCategory } />
+      <Route exact path='/categories/edit/:id' component={ CategoryEdit } />
+      <Route exact path='/categories/:id/book/new' component={ NewBook } />
+      <Route exact path='/categories/:id' component={ CategoryShow } />
+      <Route exact path='/categories' component={ CategoryList } />
   </Switch>
 )
