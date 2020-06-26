@@ -1,7 +1,9 @@
 // comunicating with the Api
 // import axios from 'axios';
+// for heroku
+// const url = `${process.env.REACT_APP_API_URL}/api/v1/categories` ||'http://localhost:4000/api/v1/categories';
 
-const REACT_APP_API = `${process.env.REACT_APP_API_URL}/api/v1/auth` || 'http://localhost:4000/api/v1/auth';
+const REACT_APP_API = 'http://localhost:4000/api/v1/auth';
 // make an instance of axios that enables passing of cookies
 // const cookieAxios = axios.create({
 //   withCredentials: true

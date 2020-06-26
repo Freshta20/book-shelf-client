@@ -1,5 +1,8 @@
 
-const url = `${process.env.REACT_APP_API_URL}/api/v1/categories` ||'http://localhost:4000/api/v1/categories';
+const url = 'http://localhost:4000/api/v1/categories';
+// for heroku
+// const REACT_APP_API = `${process.env.REACT_APP_API_URL}/api/v1/auth` || 'http://localhost:4000/api/v1/auth';
+
 
 export default class CategoryModel {
 // GET all categories
